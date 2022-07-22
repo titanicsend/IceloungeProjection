@@ -38,7 +38,7 @@ public class PlaceObjects : MonoBehaviour {
                     Physics.Raycast(startPoint, Vector3.down, out standingSpot); 
 
 
-                    GameObject newDancer = Instantiate(TerrainController.Characters[CharactersIndex], new Vector3(startPoint.x, standingSpot.point.y, startPoint.z), orientation, transform);
+                    GameObject newDancer = Instantiate(TerrainController.Characters[CharactersIndex], new Vector3(startPoint.x, hit.point.y+mesh.bounds.max[1], startPoint.z), orientation, transform);
                     newDancer.GetComponent<Animator>().runtimeAnimatorController = TerrainController.DanceMoves[DanceMoveIndex];
                 }
                 //Debug code. To use, uncomment the giant thingy below
