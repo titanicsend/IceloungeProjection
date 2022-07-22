@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEditor.Animations;
 
 public class TerrainController : MonoBehaviour {
 
@@ -29,6 +30,16 @@ public class TerrainController : MonoBehaviour {
     [SerializeField]
     private GameObject[] placeableObjects;
     public GameObject[] PlaceableObjects { get { return placeableObjects; } }
+    
+    [SerializeField]
+    private AnimatorController[] danceMoves;
+    public AnimatorController[] DanceMoves { get { return danceMoves; } }
+    
+    [SerializeField]
+    private GameObject[] characters;
+    public GameObject[] Characters { get { return characters; } }
+
+
     [SerializeField]
     private Vector3[] placeableObjectSizes;//the sizes of placeableObjects, in matching order
     public Vector3[] PlaceableObjectSizes { get { return placeableObjectSizes; } }

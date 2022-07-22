@@ -23,28 +23,23 @@ public class PlaceObjects : MonoBehaviour {
                 if (Physics.BoxCast(startPoint, TerrainController.PlaceableObjectSizes[prefabType], Vector3.down, out boxHit, orientation) && boxHit.collider.CompareTag("Terrain")) {
                     GameObject newGameObject = Instantiate(TerrainController.PlaceableObjects[prefabType], new Vector3(startPoint.x, hit.point.y, startPoint.z), orientation, transform);
                     Debug.Log("***Instantiated: " + TerrainController.PlaceableObjects[prefabType].name);
-                    if (TerrainController.PlaceableObjects[prefabType].name.Contains("dancing")) {
-                        // If the game object we just created is one of the dancing figures, then add an animator to it
 
-                        //Define Your game object or you can find the object in other ways. This is just an example to find it.
-                        //GameObjectobj = GameObject.FindGameObjectWithTag("Object");
+                    // add a random person on the iceberg
+                    int CharactersIndex = Random.Range(0, TerrainController.Characters.Length);
+                    int DanceMoveIndex = Random.Range(0, TerrainController.DanceMoves.Length);
+                    // AnimationController = TerrainController.DanceMoves[DanceMoveIndex];
+                    Mesh mesh = newGameObject.GetComponent<MeshFilter>().mesh;
+                    Vector3[] vertices = mesh.vertices;
+                    Vector2[] uvs = new Vector2[vertices.Length];
+                    Bounds bounds = mesh.bounds;
+                    Debug.Log(bounds.max);
+
+                    RaycastHit standingSpot;
+                    Physics.Raycast(startPoint, Vector3.down, out standingSpot); 
 
 
-                        Animator animator = newGameObject.AddComponent<Animator>(); 
-                        
-                        // Try to load the animator controller by path
-                        animator.runtimeAnimatorController = Resources.Load<RuntimeAnimatorController>("Assets/Genric Assets/in3D/com.in3d.sdk.loaders/Samples/Scenes/Macarena/Avatars Annimations/model_T-EditorOnly.controller");
-                        
-                        // Try to load an animator controller that is set by user in the game object inspector under the scripts exposed parameters
-                       //  animator.runtimeAnimatorController = animator as RuntimeAnimatorController;
-
-                        //Debug.Log("Dancing");
-                        //Debug.Log("***Instantiated: " + TerrainController.PlaceableObjects[prefabType].name);
-
-                    } else
-                    {
-                        // Debug.Log("Not");
-                    }
+                    GameObject newDancer = Instantiate(TerrainController.Characters[CharactersIndex], new Vector3(startPoint.x, standingSpot.point.y, startPoint.z), orientation, transform);
+                    newDancer.GetComponent<Animator>().runtimeAnimatorController = TerrainController.DanceMoves[DanceMoveIndex];
                 }
                 //Debug code. To use, uncomment the giant thingy below
                 //Debug.DrawRay(startPoint, Vector3.down * 10000, Color.blue);
