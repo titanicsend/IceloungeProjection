@@ -27,18 +27,12 @@ public class PlaceObjects : MonoBehaviour {
                     // add a random person on the iceberg
                     int CharactersIndex = Random.Range(0, TerrainController.Characters.Length);
                     int DanceMoveIndex = Random.Range(0, TerrainController.DanceMoves.Length);
-                    // AnimationController = TerrainController.DanceMoves[DanceMoveIndex];
-                    Mesh mesh = newGameObject.GetComponent<MeshFilter>().mesh;
-                    Vector3[] vertices = mesh.vertices;
-                    Vector2[] uvs = new Vector2[vertices.Length];
-                    Bounds bounds = mesh.bounds;
-                    Debug.Log(bounds.max);
 
                     RaycastHit standingSpot;
+                    startPoint.y += 100; // make sure the startPoint is above all the icebergs otherwise the raycast will be inside the mesh
                     Physics.Raycast(startPoint, Vector3.down, out standingSpot); 
 
-
-                    GameObject newDancer = Instantiate(TerrainController.Characters[CharactersIndex], new Vector3(startPoint.x, hit.point.y+mesh.bounds.max[1], startPoint.z), orientation, transform);
+                    GameObject newDancer = Instantiate(TerrainController.Characters[CharactersIndex], new Vector3(startPoint.x, standingSpot.point.y+1, startPoint.z), orientation, transform);
                     newDancer.GetComponent<Animator>().runtimeAnimatorController = TerrainController.DanceMoves[DanceMoveIndex];
                 }
                 //Debug code. To use, uncomment the giant thingy below
