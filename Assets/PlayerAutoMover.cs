@@ -8,7 +8,7 @@ public class PlayerAutoMover : MonoBehaviour
     public float speed = 1;
     private float movementX;
     private float movementY;
-    public float time;
+    private float time;
     public float frequency = 1.0f;
 
     // Start is called before the first frame update
@@ -30,7 +30,7 @@ public class PlayerAutoMover : MonoBehaviour
         time += Time.deltaTime;
         float sine = Mathf.Sin(time * frequency);
         movementX = Mathf.Sin(time * frequency);;
-        movementY = Mathf.Cos(time * frequency);
+        movementY = 3 * Mathf.Cos(time * frequency);
         gameObject.transform.Translate(0.0f, 0.0f, movementY*speed);
         gameObject.transform.Rotate(0.0f,movementX*speed,0.0f);
 
