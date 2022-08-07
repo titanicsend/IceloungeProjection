@@ -22,7 +22,7 @@ public class PlaceObjects : MonoBehaviour {
                 RaycastHit boxHit;
                 if (Physics.BoxCast(startPoint, TerrainController.PlaceableObjectSizes[prefabType], Vector3.down, out boxHit, orientation) && boxHit.collider.CompareTag("Terrain")) {
                     GameObject newGameObject = Instantiate(TerrainController.PlaceableObjects[prefabType], new Vector3(startPoint.x, hit.point.y, startPoint.z), orientation, transform);
-                    Debug.Log("***Instantiated: " + TerrainController.PlaceableObjects[prefabType].name);
+                    // Debug.Log("***Instantiated: " + TerrainController.PlaceableObjects[prefabType].name);
 
                     // add a random person on the iceberg
                     int CharactersIndex = Random.Range(0, TerrainController.Characters.Length);
