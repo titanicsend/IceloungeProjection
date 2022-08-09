@@ -375,6 +375,7 @@ MonoBehaviour:
   water: {fileID: 580105534}
   seed: 0
   placeableObjects:
+  - {fileID: 919132149155446097, guid: f8e8516b81b2346f293e2c404c825f9c, type: 3}
   - {fileID: 1639506000603888, guid: 90f98abef20dbfd4db31feb7de7d97dc, type: 3}
   - {fileID: 1845623145155872, guid: 35b707a70cd466b4db48c7f3c03b0764, type: 3}
   danceMoves:
@@ -395,8 +396,8 @@ MonoBehaviour:
   - {x: 1, y: 1, z: 1}
   - {x: 1, y: 1, z: 1}
   - {x: 1, y: 1, z: 1}
-  minObjectsPerTile: 2
-  maxObjectsPerTile: 5
+  minObjectsPerTile: 1
+  maxObjectsPerTile: 3
   destroyDistance: 100
   usePerlinNoise: 1
   noise: {fileID: 0}

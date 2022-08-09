@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 23020360471896200}
   - component: {fileID: 64253951180785358}
   m_Layer: 0
-  m_Name: Tergelberg2
+  m_Name: pointy-berg2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

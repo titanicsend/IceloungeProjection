@@ -170,7 +170,7 @@ public class TerrainController : MonoBehaviour {
         gm.NoiseScale = noiseScale;
         gm.CellSize = cellSize;
         gm.NoiseOffset = NoiseOffset(xIndex, yIndex);
-        // gm.Generate();
+        gm.Generate();
 
         Random.InitState((int)(seed + (long)xIndex * 100 + yIndex));//so it doesn't form a (noticable) pattern of similar tiles
         PlaceObjects po = gm.GetComponent<PlaceObjects>();
