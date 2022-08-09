@@ -376,7 +376,6 @@ MonoBehaviour:
   seed: 0
   placeableObjects:
   - {fileID: 1639506000603888, guid: 90f98abef20dbfd4db31feb7de7d97dc, type: 3}
-  - {fileID: 1653000386654462, guid: 3e2c97b370b921b40aaf8f0b113ff92b, type: 3}
   - {fileID: 1845623145155872, guid: 35b707a70cd466b4db48c7f3c03b0764, type: 3}
   danceMoves:
   - {fileID: 9100000, guid: 138dfbfdd2facbe4ca02349efdf76c04, type: 2}
