@@ -36,6 +36,11 @@ public class PlaceObjects : MonoBehaviour {
                 GameObject newDancer = Instantiate(TerrainController.Characters[CharactersIndex], new Vector3(startPoint.x, standingSpot.point.y+1, startPoint.z), orientation, transform);
                 newDancer.GetComponent<Animator>().runtimeAnimatorController = TerrainController.DanceMoves[DanceMoveIndex];
             }
+            else{
+                float randomScale = Random.Range(0.3f, 2);
+                Vector3 localScale = newGameObject.transform.localScale;
+                newGameObject.transform.localScale = new Vector3(localScale.x*randomScale, localScale.x*randomScale, localScale.x*randomScale);
+            }
 
         }
 
