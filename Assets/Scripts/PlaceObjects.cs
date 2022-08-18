@@ -33,8 +33,18 @@ public class PlaceObjects : MonoBehaviour {
                 startPoint.y += 100; // make sure the startPoint is above all the icebergs otherwise the raycast will be inside the mesh
                 Physics.Raycast(startPoint, Vector3.down, out standingSpot); 
 
+                GameObject dancerLocation =  new GameObject("dancer_loc");
+                dancerLocation.name = "dancer_loc";
+                dancerLocation.transform.position = new Vector3(startPoint.x, standingSpot.point.y+1, startPoint.z);
+                dancerLocation.transform.rotation = orientation;
+                dancerLocation.transform.parent = transform;
+                dancerLocation.transform.Rotate(Vector3.up, 180.0f);
+                dancerLocation.AddComponent<BoxCollider>();
+                dancerLocation.GetComponent<BoxCollider>().size = new Vector3(50,50,50);
+
                 GameObject newDancer = Instantiate(TerrainController.Characters[CharactersIndex], new Vector3(startPoint.x, standingSpot.point.y+1, startPoint.z), orientation, transform);
                 newDancer.GetComponent<Animator>().runtimeAnimatorController = TerrainController.DanceMoves[DanceMoveIndex];
+
             }
             else{
                 float randomScale = Random.Range(0.3f, 2);

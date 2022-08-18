@@ -44,7 +44,7 @@ GameObject:
   - component: {fileID: 4299206736842157288}
   - component: {fileID: 244145061684960577}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: pointy-berg2-mesh-colider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
