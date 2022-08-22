@@ -35,7 +35,7 @@ public class PlaceObjects : MonoBehaviour {
 
                 GameObject dancerLocation =  new GameObject("dancer_loc");
                 dancerLocation.name = "dancer_loc";
-                dancerLocation.transform.position = new Vector3(startPoint.x, standingSpot.point.y+1, startPoint.z);
+                dancerLocation.transform.position = new Vector3(startPoint.x, standingSpot.point.y+50, startPoint.z);
                 dancerLocation.transform.rotation = orientation;
                 dancerLocation.transform.parent = transform;
                 dancerLocation.transform.Rotate(Vector3.up, 180.0f);

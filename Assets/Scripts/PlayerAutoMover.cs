@@ -79,7 +79,7 @@ public class PlayerAutoMover : MonoBehaviour
 
                 // Debug.Log("movementX "+movementX+"movementY "+movementY);
                 // gameObject.transform
-                Debug.Log("wandering and cinemachineBrain.IsBlending: "+ cinemachineBrain.IsBlending.ToString() + "Time.deltaTime*forwardSpeed: "+ (Time.deltaTime*forwardSpeed).ToString());
+                // Debug.Log("wandering and cinemachineBrain.IsBlending: "+ cinemachineBrain.IsBlending.ToString() + "Time.deltaTime*forwardSpeed: "+ (Time.deltaTime*forwardSpeed).ToString());
 
                 gameObject.transform.Translate(0.0f, 0.0f, Time.deltaTime*forwardSpeed);
                 // player.Rotate(0.0f,Time.deltaTime*speed,0.0f);
