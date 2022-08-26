@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
-using UnityEditor.Animations;
+using AnimatorController = UnityEditor.Animations.AnimatorController;
+//using UnityEditor.Animations;
 
 public class TerrainController : MonoBehaviour {
 

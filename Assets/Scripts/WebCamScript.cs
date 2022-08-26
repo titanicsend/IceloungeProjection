@@ -19,13 +19,15 @@ public class WebCamScript : MonoBehaviour
 
 		WebCamTexture mycam = new WebCamTexture();
         // Set device number to choose webcam
-		string camName = devices[0].name;
-        //string camName = "RICOH THETA V";
-		Debug.Log("The webcam name is " + camName);
-		mycam.deviceName = camName;
-		rend.material.mainTexture = mycam;
+        if (devices.Length > 0)  {
+		    string camName = devices[0].name;
+            //string camName = "RICOH THETA V";
+		    Debug.Log("The webcam name is " + camName);
+		    mycam.deviceName = camName;
+		    rend.material.mainTexture = mycam;
 
-		mycam.Play();
+		    mycam.Play();
+        }
     }
 
     // Update is called once per frame
