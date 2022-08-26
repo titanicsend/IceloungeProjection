@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
-using AnimatorController = UnityEditor.Animations.AnimatorController;
+// using AnimatorController = UnityEditor.Animations.AnimatorController;
 //using UnityEditor.Animations;
 
 public class TerrainController : MonoBehaviour {
@@ -33,8 +33,10 @@ public class TerrainController : MonoBehaviour {
     public GameObject[] PlaceableObjects { get { return placeableObjects; } }
     
     [SerializeField]
-    private AnimatorController[] danceMoves;
-    public AnimatorController[] DanceMoves { get { return danceMoves; } }
+    // private AnimatorController[] danceMoves;
+    // public AnimatorController[] DanceMoves { get { return danceMoves; } }
+    private RuntimeAnimatorController[] danceMoves;
+    public RuntimeAnimatorController[] DanceMoves { get { return danceMoves; } }
     
     [SerializeField]
     private GameObject[] characters;
